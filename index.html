@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link al foglio dei reset -->
+    <link rel="stylesheet" href="assets/css/reset_and_utilities.css">
+    <!-- LInk al foglio di stile -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Discord Home Page</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Barra superiore centrata nello header -->
+        <div class="flexbox top_bar">
+            <!-- Elementi della barra superiore: -->
+            <!-- 1) Box destinato a contenere il logo -->
+            <div class="flexbox top-bottom_side_box">Spazio logo</div>
+            <!-- 2) Contenitore della sezione di navigazione (menu) -->
+            <nav>
+                <!-- Il menu e' strutturato come unordered list -->
+                <ul class="flexbox menu reset_list_style">
+                    <li>
+                        <a class="reset_decor menu_item" href="">Scarica</a>
+                    </li>
+                    <li>
+                        <a class="reset_decor menu_item" href="">Perchè Discord</a>
+                    </li>
+                    <li>
+                        <a class="reset_decor menu_item" href="">Nitro</a>
+                    </li>
+                    <li>
+                        <a class="reset_decor menu_item" href="">Sicurezza</a>
+                    </li>
+                    <li>
+                        <a class="reset_decor menu_item" href="">Assistenza</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 3) Box destinato a contenere il login -->
+            <div class="flexbox top-bottom_side_box">Spazio log-in</div>
+        </div>
+        <!-- Contenitore di titolo, paragrafo e pulsanti -->
+        <div id="title_block">
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Prima sezione con contenitore interno a doppio colore -->
+        <section class="flexbox">
+            <div class="flexbox section_box">
+                <div class="color1"></div>
+                <div class="color2"></div>
+            </div>
+        </section class="flexbox">
+
+        <!-- Seconda sezione con contenitore interno a doppio colore -->
+        <section class="flexbox">
+            <div class="flexbox section_box">
+                <div class="color1"></div>
+                <div class="color2"></div>
+            </div>
+        </section>
+
+        <!-- Terza sezione con contenitore interno a doppio colore -->
+        <section class="flexbox">
+            <div class="flexbox section_box">
+                <div class="color1"></div>
+                <div class="color2"></div>
+            </div>
+        </section>
+
+        <!-- Quarta sezione, piu' alta delle precedenti ma con lo stesso margine verticale -->
+        <section class="flexbox last_section">
+            <div class="last_section_item">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="flexbox">
+        <!-- Blocco centrato, contenente lingua e link ai social (left_col) e menu (footer_menu) -->
+        <div class="flexbox intra_footer">
+            <div class="left_col"></div>
+            <div class="footer_menu"></div>
+            <div class="footer_menu"></div>
+            <div class="footer_menu"></div>
+            <div class="footer_menu"></div>
+        </div>
+        <!-- Riga orizzontale realizzata mediante div -->
+        <div id="row"></div>
+        <!-- Parte bassa del footer, con il logo ed il pulsante subscribe -->
+        <div class="flexbox footer_bottom">
+            <div class="flexbox top-bottom_side_box">Spazio logo</div>
+            <div class="flexbox top-bottom_side_box">Spazio subscribe</div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

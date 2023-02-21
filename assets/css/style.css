@@ -1,0 +1,198 @@
+/* Reset box */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Definizione variabili */
+:root{
+    /* Altezza dei blocchi (header, section, blocco intra_footer) */
+    --block_height : 800px;
+    /* Larghezza dei blocchi centrati (barra superiore, blocchi intra-section, blocco intra-footer */
+    --block_width : 80%;
+    /* Larghezza blocchi con logo e login (header) e con logo e subscribe (footer)*/
+    --logo_box_width : 20%;
+    /* Altezza della barra superiore contenente logo, menu e login */
+    --top_bar_height : 100px;
+    /* Larghezza del blocco del titolo, interno allo header */
+    --title_block_width : 60%;
+    /* Altezza del blocco del titolo, interno allo header */
+    --title_block_height : 70%;
+    /* Fattore di incremento altezza dell'ultima sezione */
+    --last_section_factor : 1.5;
+    /* Margine verticale dei blocchi intra-setion */
+    --section_box_margin : 10%; /* Valore percentuale */
+    --section_box_margin_val : 0.1; /* Valore numerico */
+    /* Larghezza della colonna sinistra del footer */
+    --left_col_width : 30%;
+}
+
+header{
+    height: var(--block_height);
+    /* Inserisco una immagine di background a piacere per tutta la parte header */
+    background-image: url(https://img.freepik.com/premium-photo/vibrant-multi-color-gradient-background-simple-color-spaces-as-contemporary-background-graphic-backdrop_1962-2290.jpg);
+    background-size : cover;
+    color: white;
+}
+
+.flexbox{
+    display: flex;
+}
+
+/* Barra superiore centrata, contenente logo, menu e login */
+.top_bar{
+    width: var(--block_width);
+    height: var(--top_bar_height);
+    border: 2px dashed black;
+    background-color: green;
+    font-size: 1.3em;
+    margin: auto;
+}
+
+/* Contenitore del logo/login (header) e del logo/subscribe (footer)*/
+.top-bottom_side_box{
+    order: 0;
+    flex-basis: var(--logo_box_width);
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Contenitore logo (header e footer)*/
+.top-bottom_side_box:first-child{
+    justify-content: flex-start;
+    border-right: 2px dashed black;
+}
+
+/* Contenitore login (header) e subscribe (footer)*/
+.top-bottom_side_box:last-child{
+    justify-content: flex-end;
+    border-left: 2px dashed black;
+    order: 2;
+}
+
+/* Contenitore del menu (unordered list) */
+nav{
+    order: 1;
+    flex-basis: calc(100% - (2 * var(--logo_box_width))); 
+}
+
+.menu{
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu_item{
+    color: white;
+}
+
+/* Blocco contenitore di titolo, paragrafo e pulsanti, centrato nello header */
+#title_block{
+    width: var(--title_block_width);
+    height: var(--title_block_height);
+    background-color: blue;
+    margin: auto;
+    margin-top: 70px;
+}
+
+section{
+    height: var(--block_height);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Alternanza dei colori di sfondo delle sezioni */
+section:nth-child(even){
+    background-color: lightgray;
+}
+
+/* Blocchi intra-section */
+.section_box{
+    flex-basis: var(--block_width);
+    height: calc(100% - 2 * var(--section_box_margin));
+    border: 3px dashed black;
+}
+
+.color1{
+    flex-basis: 40%;
+    background-color: gray;
+}
+
+.color2{
+    flex-basis: 60%;
+    background-color: blueviolet;
+}
+
+/* Alternanza dei sottoblocchi colorati dentro i blocchi intra-section */
+/***********************************************************************/
+section:nth-child(odd) .section_box .color2{
+    order: -1;
+    border-right: 3px dashed black;
+}
+
+section:nth-child(even) .section_box .color2{
+    border-left: 3px dashed black;
+}
+/***********************************************************************/
+
+/* Ultima sezione (prima del footer) */
+.last_section{
+    height: calc(var(--last_section_factor) * var(--block_height));
+}
+
+/* Blocco contenuto nell'ultima sezione */
+.last_section_item{
+    background-color: green;
+    flex-basis: var(--block_width);
+    /* La seguente formula consente di mantenere il margine verticale uguale a quello delle precedenti sezioni */
+    height: calc(100% - 2 * var(--section_box_margin_val) * var(--block_height));
+    border: 3px dashed black;
+}
+
+footer{
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+/* Blocco interno al footer contenente lingua e link ai social a sinistra e menu a destra*/
+.intra_footer{
+    flex-basis: var(--block_width);
+    height: var(--block_height);
+    border: 3px dashed blue;
+    margin: 10px auto;
+}
+
+/* Blocco contenente lingua e link ai social */
+.left_col{
+    flex-basis: var(--left_col_width);
+    height: 100%;
+    background-color: red;
+}
+
+/* Blocchi (4) contenenti i menu del footer */
+.footer_menu{
+    flex-basis: calc((100% - var(--left_col_width)) / 4);
+    height: 100%;
+    background-color: plum;
+    border-left: 3px dashed blue;
+}
+
+/* Riga orizzontale */
+#row{
+    flex-basis: var(--block_width);
+    height: 3px;
+    background-color: red;
+    margin: 10px auto;
+}
+
+/* Blocco inferiore, centrato, contenente logo e subscribe */
+.footer_bottom{
+    flex-direction: row;
+    flex-basis: var(--block_width);
+    height: 100px;
+    background-color: greenyellow;
+    margin: 20px auto;
+    justify-content: space-between;
+    font-size: 1.3em;
+}
