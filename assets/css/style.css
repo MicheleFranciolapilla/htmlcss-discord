@@ -227,7 +227,7 @@ section:nth-child(even) .section_box .img_box{
 }
 
 footer{
-    background-color: black;
+    background-color: rgb(58, 50, 50);
     flex-wrap: wrap;
 }
 
@@ -235,7 +235,6 @@ footer{
 .intra_footer{
     flex-basis: var(--block_width);
     height: var(--block_height);
-    border: 3px dashed blue;
     margin: 10px auto;
 }
 
@@ -250,8 +249,15 @@ footer{
 .footer_menu{
     flex-basis: calc((100% - var(--left_col_width)) / 4);
     height: 100%;
-    background-color: plum;
-    border-left: 3px dashed blue;
+    line-height: 1.5em;
+}
+
+.footer_menu > span{
+    color: blueviolet;
+}
+
+.footer_menu > ul{
+    color: white;
 }
 
 /* Riga orizzontale */
