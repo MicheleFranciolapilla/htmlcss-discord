@@ -124,7 +124,7 @@ nav{
     margin: 0 15px;
 }
 
-.header_buttons > a.button_b-w::before{
+.header_buttons > a.button_b-w::before, .last_section_item a.button_w-b::before{
     padding: 0 5px;
     content: "\21E9";
 }
@@ -139,21 +139,20 @@ section h2{
     font-size: 3em;
 }
 
+section p{
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
 /* Alternanza dei colori di sfondo delle sezioni */
 section:nth-child(even){
     background-color: lightgray;
-
 }
 
 /* Blocchi intra-section */
 .section_box{
     flex-basis: var(--block_width);
     /* height: calc(100% - 2 * var(--section_box_margin)); */
-}
-
-.section_box p{
-    margin-top: 20px;
-    font-size: 1.5em;
 }
 
 .text_box{
@@ -193,15 +192,38 @@ section:nth-child(even) .section_box .img_box{
 /* Ultima sezione (prima del footer) */
 .last_section{
     height: calc(var(--last_section_factor) * var(--block_height));
+    text-align: center;
 }
 
 /* Blocco contenuto nell'ultima sezione */
 .last_section_item{
-    background-color: green;
+    /* background-color: green; */
     flex-basis: var(--block_width);
     /* La seguente formula consente di mantenere il margine verticale uguale a quello delle precedenti sezioni */
-    height: calc(100% - 2 * var(--section_box_margin_val) * var(--block_height));
-    border: 3px dashed black;
+    /* height: calc(100% - 2 * var(--section_box_margin_val) * var(--block_height)); */
+}
+
+.last_section_item > #big_img{
+    width: 90%;
+}
+
+.last_section_item > p{
+    padding: 10px 80px;
+}
+
+#stars{
+    width: 70%;
+    height: 80px;
+    background-image: url(../img/stars.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.last_section_item a.button_w-b{
+    font-size: 1.5em;
+    background-color: rgb(42, 84, 210);
 }
 
 footer{
