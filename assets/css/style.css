@@ -8,14 +8,20 @@
     --discord_footer_title_color : #7289DA;
     /***********************************************************/
 
-    /* Altezza dei blocchi (header, section, blocco intra_footer) */
-    --block_height : 800px;
-    /* Larghezza dei blocchi centrati (barra superiore, blocchi intra-section, blocco intra-footer */
+    /* Variabili dimensionali */
+    /**************************/
+    /* Larghezza dei blocchi centrati */
     --block_width : 80%;
-    /* Larghezza blocchi con logo e login (header) e con logo e subscribe (footer)*/
-    --logo_box_width : 25%;
+    /* Altezza massima dei blocchi */
+    --max_block_height : 800px;
     /* Altezza della barra superiore contenente logo, menu e login */
     --top_bar_height : 100px;
+    /* Larghezza blocchi con logo e login (header) e con logo e subscribe (footer)*/
+    --logo_box_width : 25%;
+
+    /**************************/
+
+
     /* Larghezza del blocco del titolo, interno allo header */
     --title_block_width : 60%;
     /* Altezza del blocco del titolo, interno allo header */
@@ -60,30 +66,47 @@ p{
 }
 /***********************/
 
+/* Utilities */
+/*************/
+
+.flexbox{
+    display: flex;
+}
+
+.reset_decor{
+    text-decoration: none;
+}
+
+/* Reset dei marcatori di lista */
+.reset_list_style{
+    list-style: none;
+}
+
+/* Larghezza ridotta e centratura */
+.center_width{
+    width: var(--block_width);
+    margin: auto;
+}
+/*************/
 
 /* Assegnazione colore di default */
 body{
     color: var(--discord_dark_color);
 }
 
+/* Immagine di sfondo del header */
 header{
     min-height: 600px;
-    max-height: var(--block_height);
+    max-height: var(--max_block_height);
     background-image: url(../img/jumbo.png);
     background-size : cover;
     background-position: center center;
     color: white;
 }
 
-.flexbox{
-    display: flex;
-}
-
 /* Barra superiore centrata, contenente logo, menu e login */
 .top_bar{
-    width: var(--block_width);
     height: var(--top_bar_height);
-    margin: auto;
 }
 
 /* Contenitore del logo/login (header) e del logo/subscribe (footer)*/
@@ -162,7 +185,7 @@ nav{
 }
 
 section{
-    height: var(--block_height);
+    height: var(--max_block_height);
     justify-content: center;
     align-items: center;
 }
@@ -223,7 +246,7 @@ section:nth-child(even) .section_box .img_box{
 
 /* Ultima sezione (prima del footer) */
 .last_section{
-    height: calc(var(--last_section_factor) * var(--block_height));
+    height: calc(var(--last_section_factor) * var(--max_block_height));
     text-align: center;
 }
 
