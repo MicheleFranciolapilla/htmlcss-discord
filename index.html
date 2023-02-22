@@ -10,6 +10,9 @@
     <!-- LInk al foglio di stile -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <title>Discord Home Page - Completamento</title>
 </head>
 
@@ -127,9 +130,33 @@
         <div class="flexbox intra_footer">
             <div class="left_col">
                 <h2>Il tuo posto per parlare</h2>
+                <img class="flag" src="assets/img/ita.png" alt="bandiera italiana">
+                <span>Italiano</span>
+                <div id="social_icon">
+                    <span>
+                        <a class="reset_decor" href="https://www.twitter.com">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a class="reset_decor" href="https://www.instagram.com">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a class="reset_decor" href="https://www.facebook.com">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a class="reset_decor" href="https://www.youtube.com">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </span>
+                  </div>
             </div>
             <div class="footer_menu">
-                <span>Prodotto</span>
+                <span>Prodotto </span>
                 <ul class="reset_list_style">
                     <li>Scarica</li>
                     <li>Perchè Discord</li>
@@ -175,12 +202,16 @@
                 </ul>
             </div>
         </div>
-        <!-- Riga orizzontale realizzata mediante div -->
-        <div id="row"></div>
         <!-- Parte bassa del footer, con il logo ed il pulsante subscribe -->
         <div class="flexbox footer_bottom">
-            <div class="flexbox top-bottom_side_box">Spazio logo</div>
-            <div class="flexbox top-bottom_side_box">Spazio subscribe</div>
+            <div class="flexbox top-bottom_side_box">
+                <a href="#">
+                    <img src="assets/img/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="flexbox top-bottom_side_box">
+                <a class="button_w-b reset_decor last_button_color" href="#">Accedi</a>
+            </div>
         </div>
     </footer>
     

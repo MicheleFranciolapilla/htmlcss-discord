@@ -234,15 +234,46 @@ footer{
 /* Blocco interno al footer contenente lingua e link ai social a sinistra e menu a destra*/
 .intra_footer{
     flex-basis: var(--block_width);
-    height: var(--block_height);
+    /* height: var(--block_height); */
     margin: 10px auto;
+    padding: 30px;
+    border-bottom: 1px solid blueviolet;
 }
 
 /* Blocco contenente lingua e link ai social */
 .left_col{
     flex-basis: var(--left_col_width);
     height: 100%;
-    background-color: red;
+    padding: 0 40px;
+}
+
+.left_col h2{
+    font-size: 2.5em;
+    color: blueviolet;
+    margin-bottom: 30px;
+}
+
+.left_col .flag{
+    width: 27px;
+    vertical-align: middle;
+}
+
+.left_col span{
+    color: white;
+    padding: 0 5px;
+}
+
+.left_col span::after{
+    content: "\25BE";
+    vertical-align: text-top;
+}
+
+#social_icon{
+    margin: 30px 0;
+}
+
+#social_icon a{
+    color: white;
 }
 
 /* Blocchi (4) contenenti i menu del footer */
@@ -250,6 +281,7 @@ footer{
     flex-basis: calc((100% - var(--left_col_width)) / 4);
     height: 100%;
     line-height: 1.5em;
+    padding: 10px 30px;
 }
 
 .footer_menu > span{
@@ -260,21 +292,16 @@ footer{
     color: white;
 }
 
-/* Riga orizzontale */
-#row{
-    flex-basis: var(--block_width);
-    height: 3px;
-    background-color: red;
-    margin: 10px auto;
-}
-
 /* Blocco inferiore, centrato, contenente logo e subscribe */
 .footer_bottom{
     flex-direction: row;
     flex-basis: var(--block_width);
     height: 100px;
-    background-color: greenyellow;
     margin: 20px auto;
     justify-content: space-between;
     font-size: 1.3em;
+}
+
+.last_button_color{
+    background-color: rgb(42, 84, 210);
 }
