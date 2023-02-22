@@ -128,19 +128,36 @@ header{
     order: 2;
 }
 
-.button_b-w{
+/* Pulsante standard (testo nero su sfondo bianco) */
+.std_button{
     color: var(--discord_dark_color);
     background-color: white;
     padding: 7px 15px;
     border-radius: 1em;
 }
 
-.button_w-b{
+/* Overriding specifico di alcuni pulsanti */
+/*******************************************/
+
+/* Carattere (freccia in basso) inserito prima del testo "Scarica per Mac", nel header e nell'ultima sezione */
+.header_buttons a.std_button:first-child::before, .last_section a.std_button::before{
+    padding: 0 5px;
+    content: "\21E9";
+}
+
+/* Inversione dei colori sul pulsante "Apri Discord nel tuo browser" (header)*/
+.header_buttons a.std_button:last-child{
     color: white;
     background-color: var(--discord_dark_color);
-    padding: 7px 15px;
-    border-radius: 1em;
 }
+
+/* Cambio colore e sfondo del pulsante "Scarica per Mac" (ultima sezione) e del pulsante "registrati" (footer)*/
+.last_section a.std_button, footer a.std_button{
+    color: white;
+    background-color: var(--discord_button_color);
+}
+/*******************************************/
+
 
 /* Contenitore del menu (unordered list) */
 nav{
@@ -179,10 +196,6 @@ nav{
     margin: 0 15px;
 }
 
-.header_buttons > a.button_b-w::before, .last_section_item a.button_w-b::before{
-    padding: 0 5px;
-    content: "\21E9";
-}
 
 section{
     height: var(--max_block_height);
@@ -190,9 +203,6 @@ section{
     align-items: center;
 }
 
-section h2{
-    /* font-size: 3em; */
-}
 
 section p{
     margin-top: 20px;
@@ -357,6 +367,3 @@ footer{
     font-size: 1.3em;
 }
 
-.last_button_color{
-    background-color: var(--discord_button_color);
-}
