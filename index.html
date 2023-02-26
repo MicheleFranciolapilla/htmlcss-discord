@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <!-- LInk al foglio di stile -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Link utilizzato per recuperare le icone dei social media (font: stackoverflow) -->
+    <!-- Link utilizzato per recuperare le icone dei social media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Link al Google Font "Rubik Semibold 600" -->
@@ -20,200 +21,284 @@
 </head>
 
 <body>
-
+    <!-- In heaader prendono posto il disegno di sfondo, la barra di navigazione (logo + menu + login) ed il blocco (titolo + paragrafo sottotitolo + pulsanti)-->
     <header>
-        <!-- Barra superiore centrata nello header -->
-        <div class="flexbox center_width top_bar">
-            <!-- Elementi della barra superiore: -->
-            <!-- 1) Logo -->
-            <div class="flexbox top-bottom_side_box">
-                <a href="#">
+        <!-- Il nav accoglie tutti gli elementi della barra superiore (logo + menu + login), tutti selezionabili (link) e racchiusi dentro un contenitore flexbox (menubar) di ampiezza 80% della width totale. Questo valore di 80% e' comune a tutti gli elementi disposti verticalmente al centro dello schermo ed e' regolato da una specifica variabile nel foglio di stile -->
+        <nav>
+            <div id="menu_bar" class="flexbox center_width">
+                <a href="#" class="logo reset_decor">
                     <img src="assets/img/logo.svg" alt="logo">
                 </a>
-            </div>
-            <!-- 2) Contenitore della sezione di navigazione (menu) -->
-            <nav>
-                <!-- Il menu e' strutturato come unordered list -->
-                <ul class="flexbox menu reset_list_style">
-                    <li>
-                        <a class="reset_decor menu_item" href="#">Scarica</a>
+                <ul id="menu" class="flexbox reset_list_style">
+                    <li class="menu_item" >
+                        <a href="#" class="color_w reset_decor">
+                            Scarica
+                        </a>
                     </li>
-                    <li>
-                        <a class="reset_decor menu_item" href="#">Perchè Discord</a>
+                    <li class="menu_item" >
+                        <a href="#" class="color_w reset_decor">
+                            Perchè Discord
+                        </a>
                     </li>
-                    <li>
-                        <a class="reset_decor menu_item" href="">Nitro</a>
+                    <li class="menu_item" >
+                        <a href="#" class="color_w reset_decor">
+                            Nitro
+                        </a>
                     </li>
-                    <li>
-                        <a class="reset_decor menu_item" href="">Sicurezza</a>
+                    <li class="menu_item" >
+                        <a href="#" class="color_w reset_decor">
+                            Sicurezza
+                        </a>
                     </li>
-                    <li>
-                        <a class="reset_decor menu_item" href="">Assistenza</a>
+                    <li class="menu_item" >
+                        <a href="#" class="color_w reset_decor">
+                            Assistenza
+                        </a>
                     </li>
                 </ul>
-            </nav>
-            <!-- 3) Login -->
-            <div class="flexbox top-bottom_side_box">
-                <a class="std_button reset_decor" href="#">Accedi</a>
+                <a href="#" class="pulsante reset_decor">Accedi</a>
             </div>
-        </div>
-        <!-- Contenitore di titolo, sottotitolo e pulsanti -->
-        <div id="title_block">
+        </nav>
+        <!-- Blocco di testo e pulsanti al centro dello header -->
+        <div id="head_section" class="color_w">
             <h1>Il tuo posto per parlare</h1>
-            <h5>
+            <p>
                 Che tu faccia parte di un club scolastico, gruppo di gamer, comunità artistica mondiale, o semplicemente di un piccolo gruppo di amici che vuole passare il tempo assieme, Discord rende più facile chiacchierare ogni giorno e ritrovarsi più spesso.
-            </h5>
-            <div class="flexbox header_buttons">
-                <a class="std_button reset_decor" href="#">Scarica per Mac</a>
-                <a class="std_button reset_decor" href="#">Apri Discord nel tuo browser</a>
+            </p>
+            <!-- Coppia di pulsanti -->
+            <div id="head_btn" class="flexbox">
+                <a href="#" class="pulsante reset_decor">
+                    <strong>&#8595;</strong>
+                    Scarica per Mac
+                </a>
+                <a href="#" class="pulsante reset_decor">Apri Discord nel tuo browser
+                </a>
             </div>
         </div>
     </header>
 
+    <!-- Il main racchiude le 4 sezioni comprese tra header e footer -->
     <main>
-
-        <!-- Prima sezione con contenitore interno (grafico/testuale)-->
-        <section class="flexbox">
-            <div class="flexbox section_box">
-                <div class="text_box">
-                    <h2>Un luogo a invito con tutto lo spazio necessario per parlare</h2>
+        <!-- Prima sezione: sfondo bianco e immagine a sinistra -->
+        <section>
+            <div class="section_box center_width flexbox">
+                <div class="image">
+                    <img src="assets/img/item1.svg" alt="immagine 1">
+                </div>
+                <div class="text">
+                    <h2>
+                        Un luogo a invito con tutto lo spazio necessario per parlare
+                    </h2>
                     <p>
                         I server Discord sono organizzati in canali tematici in cui puoi collaborare, condividere o semplicemente parlare della tua giornata senza intasare una chat di gruppo.
                     </p>
                 </div>
-                <div class="img_box item1"></div>
             </div>
         </section>
 
-        <!-- Seconda sezione con contenitore interno (tesuale/grafico) -->
-        <section class="flexbox">
-            <div class="flexbox section_box">
-                <div class="text_box">                    
-                    <h2>Dove trovarsi è facile</h2>
+        <!-- Onda (extra section) tra sezioni 1 e 2 -->
+        <div class="wave"></div>
+        <!-- Seconda sezione: sfondo grigio e immagine a destra -->
+        <section>
+            <div class="section_box center_width flexbox">
+                <div class="image">
+                    <img src="assets/img/item2.svg" alt="immagine 2">
+                </div>
+                <div class="text">
+                    <h2>
+                        Dove trovarsi è facile
+                    </h2>
                     <p>
                         Mettiti comodo in un canale vocale quando hai tempo. Gli amici nel tuo server possono vedere che sei lì e unirsi istantaneamente senza dover chiamare.
                     </p>
                 </div>
-                <div class="img_box item2"></div>
             </div>
         </section>
 
-        <!-- Terza sezione con contenitore interno (grafico/testuale) -->
-        <section class="flexbox">
-            <div class="flexbox section_box">
-                <div class="text_box">                    
-                    <h2>Da pochi a un fandom</h2>
+        <!-- Onda (extra section) riflessa verticalmente, tra sezioni 2 e 3 -->
+        <div class="wave riflessa"></div>
+        <!-- Terza sezione: sfondo bianco e immagine a sinistra -->
+        <section>
+            <div class="section_box center_width flexbox">
+                <div class="image">
+                    <img src="assets/img/item3.svg" alt="immagine 3">
+                </div>
+                <div class="text">
+                    <h2>
+                        Da pochi a un fandom
+                    </h2>
                     <p>
-                        Dai inizio a una community di qualsiasi dimensione con strumenti di moderazione e accesso ai membri personalizzabile. Concedi ai membri poteri speciali, crea canali privati, e molto altro.
+                        Dai inizio a una comunity di qualsiasi 
+                        dimensione con strumenti di moderazione e accesso ai membri personalizzabile. Concedi ai membri poteri speciali, crea canali privati e molto altro.
                     </p>
                 </div>
-                <div class="img_box item3"></div>
             </div>
         </section>
-
-        <!-- Quarta sezione contenente testo, immagini e pulsante -->
-        <section id="last_section">
-            <div class="last_section_item center_width">
-                <h2>Tecnologia affidabile per tenersi in contatto</h2>
+       
+        <!-- Onda (extra section) tra sezioni 3 e 4 -->
+        <div class="wave"></div>
+        <!-- Quarta sezione: sfondo grigio, testo, immagine grande al centro, pulsante -->
+        <section>
+            <div id="last_section_box" class="center_width">
+                <h2>
+                    Tecnologia affidabile per tenersi in contatto
+                </h2>
                 <p>
                     Video e audio a bassa latenza ti faranno sentire come se foste tutti nella stessa stanza. Fai ciao in video, guarda gli amici giocare in streaming, o riunitevi in una sessione di disegno con la condivisione schermo.
                 </p>
-                <img id="big_img" src="assets/img/item4-big.svg" alt="foto item 4">
+                <img src="assets/img/item4-big.svg" alt="immagine grande" width="100%">
+                <!-- Immagine con stelle in sfondo al testo -->
                 <div id="stars">
                     <h4>Pronto a iniziare la tua avventura?</h4>
                 </div>
-                <a class="std_button reset_decor" href="#">Scarica per Mac</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="flexbox">
-        <!-- Blocco centrato, contenente lingua e link ai social (left_col) e menu (footer_menu) -->
-        <div class="flexbox intra_footer">
-            <div class="left_col">
-                <h4>Il tuo posto per parlare</h4>
-                <img class="flag" src="assets/img/ita.png" alt="bandiera italiana">
-                <span>Italiano</span>
-                <div id="social_icon">
-                    <span>
-                        <a class="reset_decor" href="https://www.twitter.com">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </span>
-                    <span>
-                        <a class="reset_decor" href="https://www.instagram.com">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </span>
-                    <span>
-                        <a class="reset_decor" href="https://www.facebook.com">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </span>
-                    <span>
-                        <a class="reset_decor" href="https://www.youtube.com">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </span>
-                  </div>
-            </div>
-            <div class="footer_menu">
-                <span>Prodotto </span>
-                <ul class="reset_list_style">
-                    <li>Scarica</li>
-                    <li>Perchè Discord</li>
-                    <li>Nitro</li>
-                    <li>Sicurezza</li>
-                    <li>Assistenza</li>
-                </ul>
-            </div>
-            <div class="footer_menu">
-                <span>Compagnia</span>
-                <ul class="reset_list_style">
-                    <li>Chi siamo</li>
-                    <li>Lavora con noi</li>
-                    <li>Marchio</li>
-                    <li>Redazione</li>
-                    <li>Negozio</li>
-                </ul>
-            </div>
-            <div class="footer_menu">
-                <span>Risorse</span>
-                <ul class="reset_list_style">
-                    <li>Scarica</li>
-                    <li>Perchè Discord</li>
-                    <li>Nitro</li>
-                    <li>Sicurezza</li>
-                    <li>Assistenza</li>
-                    <li>Scarica</li>
-                    <li>Perchè Discord</li>
-                    <li>Nitro</li>
-                    <li>Sicurezza</li>
-                    <li>Assistenza</li>
-                    <li>Assistenza</li>
-                </ul>
-            </div>
-            <div class="footer_menu">
-                <span>Norme</span>
-                <ul class="reset_list_style">
-                    <li>Scarica</li>
-                    <li>Perchè Discord</li>
-                    <li>Nitro</li>
-                    <li>Sicurezza</li>
-                    <li>Assistenza</li>
-                </ul>
-            </div>
-        </div>
-        <!-- Parte bassa del footer, con il logo ed il pulsante subscribe -->
-        <div class="flexbox footer_bottom">
-            <div class="flexbox top-bottom_side_box">
-                <a href="#">
-                    <img src="assets/img/logo.svg" alt="logo">
+                <!-- Pulsante -->
+                <a href="#" class="pulsante white_blue reset_decor">
+                    <strong>&#8595;</strong>
+                    Scarica per Mac
                 </a>
             </div>
-            <div class="flexbox top-bottom_side_box">
-                <a class="std_button reset_decor" href="#">Registrati</a>
+        </section>
+    </main>
+
+    <!-- Footer diviso in piu' sotto blocchi flexbox annidati -->
+    <footer>
+        <div id="footer_box" class="flexbox center_width">
+            <!-- Sezione superiore del footer, con selezione lingua (non implementata), icone social (link) e footer menu (link) -->
+            <div id="upper" class="flexbox">
+                <div id="left_col">
+                    <h4>Il tuo posto per parlare</h4>
+                    <img src="assets/img/ita.png" alt="bandiera italiana" width="8%">
+                    <span>Italiano &#9660;</span>
+                    <div id="social">
+                        <span>
+                            <a class="reset_decor color_w" href="https://www.twitter.com">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </span>
+                        <span>
+                            <a class="reset_decor color_w" href="https://www.instagram.com">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </span>
+                        <span>
+                            <a class="reset_decor color_w" href="https://www.facebook.com">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </span>
+                        <span>
+                            <a class="reset_decor color_w" href="https://www.youtube.com">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </span>                     
+                    </div>
+                </div>
+                <div class="footer_menu">
+                    <h5>Prodotto</h5>
+                    <ul class="reset_list_style">
+                        <li>
+                            <a href="#" class="color_w reset_decor">Scarica</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Perchè Discord</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Nitro</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Sicurezza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Assistenza</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_menu">
+                    <h5>Compagnia</h5>
+                    <ul class="reset_list_style">
+                        <li>
+                            <a href="#" class="color_w reset_decor">Chi siamo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Lavora con noi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Marchio</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Redazione</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Negozio</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_menu">
+                    <h5>Risorse</h5>
+                    <ul class="reset_list_style">
+                        <li>
+                            <a href="#" class="color_w reset_decor">Scarica</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Perchè Discord</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Nitro</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Sicurezza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Assistenza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Scarica</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Perchè Discord</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Nitro</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Sicurezza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Assistenza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Assistenza</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_menu">
+                    <h5>Norme</h5>
+                    <ul class="reset_list_style">
+                        <li>
+                            <a href="#" class="color_w reset_decor">Scarica</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Perchè Discord</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Nitro</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Sicurezza</a>
+                        </li>
+                        <li>
+                            <a href="#" class="color_w reset_decor">Assistenza</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sezione inferiore del footer, con logo (link) e pulsante di registrazione -->
+            <div id="lower" class="flexbox">
+                <a href="#" class="logo reset_decor">
+                    <img src="assets/img/logo.svg" alt="logo">
+                </a>
+                <a href="#" class="pulsante white_blue reset_decor">
+                    Registrati
+                </a>
             </div>
         </div>
     </footer>

@@ -3,36 +3,16 @@
     /* Colori utilizzati nel mockup, rilevati con Color Picker */
     /***********************************************************/
     --discord_dark_color : #23272A;
-    --discord_bkgr_color : #F6F6F6;
     --discord_button_color : #8EA1E1;
     --discord_footer_title_color : #7289DA;
     /***********************************************************/
-
     /* Variabili dimensionali */
     /**************************/
-    /* Larghezza dei blocchi centrati */
+    /* Ampiezza dei blocchi centrati */
     --block_width : 80%;
-    /* Altezza massima dei blocchi */
-    --max_block_height : 800px;
-    /* Altezza della barra superiore contenente logo, menu e login */
-    --top_bar_height : 100px;
-    /* Larghezza blocchi con logo e login (header) e con logo e subscribe (footer)*/
-    --logo_box_width : 25%;
-
+    /* Altezza di riferimento (o altezza minima di riferimento) dei blocchi header, section, footer */
+    --h_s_f_height : 600px;
     /**************************/
-
-
-    /* Larghezza del blocco del titolo, interno allo header */
-    --title_block_width : 60%;
-    /* Altezza del blocco del titolo, interno allo header */
-    --title_block_height : 70%;
-    /* Fattore di incremento altezza dell'ultima sezione */
-    --last_section_factor : 1.5;
-    /* Margine verticale dei blocchi intra-setion */
-    --section_box_margin : 10%; /* Valore percentuale */
-    --section_box_margin_val : 0.1; /* Valore numerico */
-    /* Larghezza della colonna sinistra del footer */
-    --left_col_width : 30%;
 }
 
 /* Reset box & font*/
@@ -62,7 +42,7 @@ h5{
 }
 
 p{
-    font-size: 0.7em;
+    font-size: 1.2em;
 }
 /***********************/
 
@@ -94,272 +74,187 @@ body{
     color: var(--discord_dark_color);
 }
 
-/* Immagine di sfondo del header */
-header{
-    min-height: 600px;
-    max-height: var(--max_block_height);
-    background-image: url(../img/jumbo.png);
-    background-size : cover;
-    background-position: center center;
+.color_w{
     color: white;
 }
 
-/* Barra superiore centrata, contenente logo, menu e login */
-.top_bar{
-    height: var(--top_bar_height);
+/* Immagine di sfondo del header */
+header{
+    height: var(--h_s_f_height);
+    background-image: url(../img/jumbo.png);
+    background-size : cover;
+    background-position: top center;
+    padding: 30px 0;
 }
 
-/* Contenitore del logo/login (header) e del logo/subscribe (footer)*/
-.top-bottom_side_box{
-    order: 0;
-    flex-basis: var(--logo_box_width);
+/* Barra superiore contenente tutti gli elementi cliccabili: logo, menu, login */
+#menu_bar{
+    justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
 }
 
-/* Contenitore logo (header e footer)*/
-.top-bottom_side_box:first-child{
-    justify-content: flex-start;
+/* Menu superiore centrale */
+#menu{
+    flex-basis: 50%;
+    justify-content: space-around;
 }
 
-/* Contenitore login (header) e subscribe (footer)*/
-.top-bottom_side_box:last-child{
-    justify-content: flex-end;
-    order: 2;
+/* Voci del menu */
+.menu_item{
+    display: inline-block;
 }
 
-/* Pulsante standard (testo nero su sfondo bianco) */
-.std_button{
+.pulsante{
     color: var(--discord_dark_color);
     background-color: white;
-    padding: 7px 15px;
-    border-radius: 1em;
-    margin: 0 15px;
+    border-radius: 1.5em;
+    padding: 8px 15px;
 }
 
-/* Overriding specifico di alcuni pulsanti */
-/*******************************************/
-
-/* Carattere (freccia in basso) inserito prima del testo "Scarica per Mac", nel header e nell'ultima sezione */
-.header_buttons a.std_button:first-child::before, #last_section a.std_button::before{
-    padding: 0 5px;
-    content: "\21E9";
+/* Blocco centrato internamente ad header, includente titolo, paragrafo sottotitolo e coppia di pulsanti */
+#head_section{
+    width: 55%;
+    margin: auto;
+    text-align: center;
 }
 
-/* Inversione dei colori sul pulsante "Apri Discord nel tuo browser" (header)*/
-.header_buttons a.std_button:last-child{
+#head_section > h1{
+    margin: 40px;
+}
+
+p{
+    line-height: 1.5em;
+    margin-top: 30px;
+}
+
+/* Blocco pulsanti */
+#head_btn{
+    margin-top: 60px;
+    justify-content: space-evenly;
+}
+
+#head_btn .pulsante:last-child{
     color: white;
     background-color: var(--discord_dark_color);
 }
 
-/* Cambio colore e sfondo del pulsante "Scarica per Mac" (ultima sezione) e del pulsante "registrati" (footer)*/
-#last_section a.std_button, footer a.std_button{
-    color: white;
-    background-color: var(--discord_button_color);
-}
-/*******************************************/
-
-/* Contenitore del menu (unordered list) */
-nav{
-    order: 1;
-    flex-basis: calc(100% - (2 * var(--logo_box_width))); 
+.debug{
+    border: 5px solid yellow;
 }
 
-/* Centratura del menu */
-.menu{
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.menu_item{
-    color: white;
-}
-
-/* Blocco contenitore di titolo, sottotitolo e pulsanti, centrato nello header */
-#title_block{
-    width: var(--title_block_width);
-    margin: 1em auto;
-    text-align: center;
-}
-
-/* Padding per il sottotitolo */
-#title_block > h5{
-    padding: 2em 1em;
-}
-
-.header_buttons{
-    justify-content: center;
-    font-size: 1.2em;
-}
-
-/* Inizio css per main/section */
 section{
-    height: var(--max_block_height);
-    justify-content: center;
-    align-items: center;
+    min-height: var(--h_s_f_height);  
 }
 
-section p{
-    margin-top: 20px;
-    font-size: 1.5em;
+/* Blocco "onda" esterno alle sezioni */
+.wave{
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/wave.svg);
+    /* Filtro di conversione del colore dell'onda */
+    filter: invert(100%) sepia(17%) saturate(4%) hue-rotate(293deg) brightness(91%) contrast(80%);
 }
 
-/* Alternanza dei colori di sfondo delle sezioni */
-section:nth-child(even){
-    background-color: var(--discord_bkgr_color);
+/* Onda riflessa */
+.riflessa{
+    transform: scale(-1);
 }
 
-/* Blocchi intra-section */
-.section_box{
-    flex-basis: var(--block_width);
+/* Selettore delle sezioni con sfondo grigio in cui la formula "4n+3" tiene conto della presenza dei blocchi onda */
+section:nth-child(4n+3){
+    background-color: lightgray;
 }
 
-/* Parte testuale dei blocchi */
-.text_box{
-    flex-basis: 40%;
-    padding: 40px 20px;
+.image{
+    flex-basis: 65%;
 }
 
-/* Parte grafica dei blocchi */
-.img_box{
-    flex-basis: 60%;
-    height: 600px;
-    background-size: contain;
-    background-repeat: no-repeat;
+.text{
+    flex-basis: 35%;
+    padding: 30px;
 }
 
-/* Immagine 1 */
-.img_box.item1{
-    background-image: url(../img/item1.svg);
-}
-
-/* Immagine 2 */
-.img_box.item2{
-    background-image: url(../img/item2.svg);
-}
-
-/* Immagine 3 */
-.img_box.item3{
-    background-image: url(../img/item3.svg);
-}
-
-/* Alternanza della disposizione "grafica/testuale" e "testuale/grafica" nei blocchi delle prime 3 sezioni */
-section:nth-child(odd) .section_box .img_box{
+/* Selettore della sezione con immagine e testo invertiti in cui la formula "4n+3" tiene conto della presenza dei blocchi onda */
+section:nth-child(4n+3) .text{
     order: -1;
 }
 
-/* Ultima sezione (prima del footer) */
-#last_section{
-    height: 1400;
+/* Ultima sezione, con immagine grande al centro */
+#last_section_box{
+    height: 100%;
+    padding: 30px 0 100px 0;
     text-align: center;
 }
 
-/* Blocco contenuto nell'ultima sezione */
-.last_section_item{
-    width: var(--block_width);
-    padding: 50px;
+#last_section_box > p{
+    padding: 0 100px;
 }
 
-/* Immagine grande */
-.last_section_item > #big_img{
-    width: 80%;
-}
-
-/* Paragrafo */
-.last_section_item > p{
-    padding: 10px 80px;
-}
-
-/* Sottofondo con stelle */
 #stars{
-    width: 60%;
-    height: 60px;
+    width: 55%;
+    height: 80px;
+    padding-top: 40px;
+    margin: 0 auto 40px auto;
     background-image: url(../img/stars.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    margin: auto;
-    /* margin-bottom: 30px; */
 }
 
-.last_section_item a.std_button{
-    font-size: 1em;
+/* Colori relativi ai pulsanti extra header */
+.white_blue{
+    color: white;
     background-color: var(--discord_button_color);
 }
 
 footer{
+    min-height: var(--h_s_f_height);
+    padding: 50px 0;
     background-color: var(--discord_dark_color);
-    flex-wrap: wrap;
 }
 
-/* Blocco interno al footer contenente lingua e link ai social a sinistra e menu a destra*/
-.intra_footer{
-    flex-basis: var(--block_width);
-    /* height: var(--block_height); */
-    margin: 10px auto;
-    padding: 30px;
-    border-bottom: 1px solid var(--discord_footer_title_color);
-}
-
-/* Blocco contenente lingua e link ai social */
-.left_col{
-    flex-basis: var(--left_col_width);
+#footer_box{
     height: 100%;
-    padding: 0 40px;
+    flex-direction: column;
 }
 
-.left_col h4{
-    /* font-size: 2.5em; */
-    color: var(--discord_footer_title_color);
-    margin-bottom: 30px;
+#footer_box > div{
+    justify-content: space-between;
 }
 
-.left_col .flag{
-    width: 27px;
+/* Parte alta del footer */
+#upper{
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--discord_button_color);
+    color: var(--discord_button_color);
+}
+
+/* 4 menu verticali del footer */
+#upper > .footer_menu{
+    flex-basis: calc(70% / 4);
+    line-height: 2em;
+}
+
+/* sezione di sinistra del footer */
+#left_col{
+    flex-basis: 30%;
+    padding-right: 50px;
+}
+
+#left_col > img{
+    margin: 30px 0;
     vertical-align: middle;
 }
 
-.left_col span{
-    color: white;
-    padding: 0 5px;
-}
-
-.left_col span::after{
-    content: "\25BE";
-    vertical-align: text-top;
-}
-
-#social_icon{
-    margin: 30px 0;
-}
-
-#social_icon a{
+#left_col > span{
+    font-size: small;
     color: white;
 }
 
-/* Blocchi (4) contenenti i menu del footer */
-.footer_menu{
-    flex-basis: calc((100% - var(--left_col_width)) / 4);
-    height: 100%;
-    line-height: 1.5em;
-    padding: 10px 30px;
+#social i{
+    margin-right: 10px;
 }
 
-.footer_menu > span{
-    color: var(--discord_footer_title_color);
+/* Parte bassa del footer */
+#lower{
+    padding-top: 30px;
 }
-
-.footer_menu > ul{
-    color: white;
-}
-
-/* Blocco inferiore, centrato, contenente logo e subscribe */
-.footer_bottom{
-    flex-direction: row;
-    flex-basis: var(--block_width);
-    height: 100px;
-    margin: 20px auto;
-    justify-content: space-between;
-    font-size: 1.3em;
-}
-
